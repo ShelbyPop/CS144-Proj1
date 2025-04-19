@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* advised to use variables for dark/light mode toggle */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --link-color: #4a4aff;
+  --container-bg-color: #ecc8c8; 
+  --box-bg-color: #757373;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 24px; 
+}
+
+body.dark {
+  --bg-color: #000000; 
+  --text-color: #eeeeee;
+  --container-bg-color: #572525;
+  --box-bg-color: #333232;
+  
+  --link-color: #80bfff;
+  /* --heading-color: #dabfff;
+  
+  --list-marker-color: #ff6f61; */
+}
+
+.container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--container-bg-color);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* a tags => links */
+a {
+  color: var(--link-color);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem); 
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 1rem;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000; /* make sure in front */
+}
+
+.theme-toggle img {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle img:hover {
+  transform: rotate(20deg); /* saw this idea here: https://www.30secondsofcode.org/css/s/image-hover-rotate/#:~:text=All%20it%20takes%20is%20a,hovering%20over%20the%20parent%20element.*/
+}
+
+nav ul {
+  list-style: none; /* remove bullet points */
+  display: flex;
+  gap: 15px;
+  margin: 0px 0 20px 0; 
+}
+
+header h1 {
+  font-family: 'Bungee Spice', sans-serif;
+  color: #7B2CBF; /* due to font style, doesn't change anything, but fulfills requirement in spec for 6a */
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.sub-bp {
+  padding-left: 1.5rem;
+}
+
+.sub-bp li::marker {
+  content: '- '; 
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+/* Apply on hover */
+a:hover {
+  animation: shake 0.4s ease-in-out 1;
+  display: inline-block;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: rotate(-10deg); }
+  20% { transform: rotate(-20deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(0deg); }
+  80% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.logo-section {
+  text-align: center;
+  padding: 1rem;
+}
+
+.deadlock-logo {
+  max-width: 100%;         
+  height: auto;           
+  width: clamp(500px, 100%, 500px); /*Original Logo was wayyy too big*/
+  display: block;
+  margin: 0 auto;
+}
+
+.grid-section {
+  padding: 2rem;
+}
+
+.grid-section h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, auto);   /* 2 rows */
+  gap: 1rem;                             
+  padding: 1rem;
+}
+
+.grid-item {
+  background-color: var(--container-bg-color);
+  border: 2px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.expansive-main {
+  grid-column: span 2;
+  background-color: #d66c2f;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.flex-head {
+  padding: 2rem;
+  color: var(--text-color);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: var(--container-bg-color);
+}
+
+.flex-box {
+  flex: 1 1 250px; /* grow, shrink, basis */
+  background-color: var(--box-bg-color);
+  padding: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  max-height: 100px;
+}
+
+/* spec 16a */
+header + nav {
+  background-color: #fffaee;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+/* spec 16b */
+a[href*=".com"], 
+a[href*=".tv"] {
+  font-weight: bold;
+}
+
+/* Media queries */
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px /* consumes more screen space, less whitespace */
+  }
+  main h2 {
+    font-size: 1.5rem; 
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expansive-main {
+    grid-column: span 2; /* now only 2 columns */
+    grid-row: span 1;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .flex-box {
+    font-size: 0.9rem;
+    flex: 1 2 auto;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.block-span {
+  display: block;
+  background-color: var(--box-bg-color);
+  color: #fff;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem; /* 2rem makes name on one line at 320px width */
+  }
+  main h2 {
+    font-size: 1.2rem; 
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .expansive-main {
+    grid-column: span 1;
+  }
+}

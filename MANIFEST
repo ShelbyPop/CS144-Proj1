@@ -1,0 +1,56 @@
+ALL students complete this section:
+
+CHOICES
+(You are allowed to choose a feature for some of the requirements. Indicate on the line
+ which one you chose using the letter provided in the spec. Separate the letters with a comma
+ In some cases you will also need to tell us what you did)
+-------
+9a. View h1 in styles.css (48-55), text shadow on line 53 
+9b. Also in h1 ^, but on line 49
+12. 12b done for h1, text shadow on line 53. 12c done for LINK <a> shake (line 101 in styles.css)
+18. 
+
+19. N/A
+
+JAVASCRIPT
+(Please tells us what the JavaScript does e.g. "click on the green button and it does the following...")
+----------
+Clicking on the sun will convert the text and background to a black and reddish color, much better for night-time view
+Clicking on the moon will then revert back the scene to its original colors upon loading the page.
+This is 'assumed light-mode'.
+
+
+
+NOTES TO STAFF
+(If there is anything you need to tell us, please use the section below)
+---------------
+
+
+
+
+ONLY modify this section if you implemented the requirements across 2 or more files.
+Otherwise, submit this file as is. PLEASE do not delete anything from this file.
+
+REQUIREMENT LOCATION
+(After the period, hit TAB and then enter the HTML page name where the requirement
+ was implemented)
+---------------------
+ 2.
+ 3.
+ 4.
+ 5.
+ 6.
+ 7.
+ 8.
+ 9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
