@@ -11,6 +11,7 @@
   --link-color: #4a4aff;
   --container-bg-color: #ecc8c8; 
   --box-bg-color: #757373;
+  --form-color: #b46565;
 }
 
 body {
@@ -26,8 +27,9 @@ body.dark {
   --text-color: #eeeeee;
   --container-bg-color: #572525;
   --box-bg-color: #333232;
+  --form-color: #e6a1a1;
   
-  --link-color: #80bfff;
+
   /* --heading-color: #dabfff;
   
   --list-marker-color: #ff6f61; */
@@ -44,8 +46,22 @@ body.dark {
 }
 
 /* a tags => links */
-a {
-  color: var(--link-color);
+a:link {
+  color: var(--link-color); /* default */
+}
+
+a:visited {
+  color: #80bfff; /* light blue */
+}
+
+a:hover {
+  color: #ff6ec4;
+  animation: shake 0.4s ease-in-out 1;
+  display: inline-block;
+}
+
+a:active {
+  color: #ff3e7f; /* pinkish active click */
 }
 
 h1 {
@@ -99,13 +115,9 @@ header h1 {
   font-size: 1.1rem;
 }
 
-/* Apply on hover */
-a:hover {
-  animation: shake 0.4s ease-in-out 1;
-  display: inline-block;
-}
 
-/* Shake animation */
+
+/* shake animation */
 @keyframes shake {
   0% { transform: rotate(-10deg); }
   20% { transform: rotate(-20deg); }
@@ -123,7 +135,7 @@ a:hover {
 .deadlock-logo {
   max-width: 100%;         
   height: auto;           
-  width: clamp(500px, 100%, 500px); /*Original Logo was wayyy too big*/
+  width: clamp(400px, 100%, 500px); /* original Logo was wayyy too big*/
   display: block;
   margin: 0 auto;
 }
@@ -203,6 +215,104 @@ a[href*=".tv"] {
   font-weight: bold;
 }
 
+.language-form {
+  background-color: var(--container-bg-color);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.language-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.language-form fieldset {
+  border: 2px solid var(--form-color);
+  border-radius: 8px; /* makes the line more curved! */
+  padding: 1rem;
+}
+
+.language-form legend {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.language-form label {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.language-form input,
+.language-form button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--form-color);
+}
+
+.language-form button {
+  background-color: var(--form-color);
+  color: var(--text-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* better than instant switch on hover */
+}
+
+.language-form button:hover {
+  background-color: #472a4a;
+}
+
+.range-wrapper {
+  display: flex;
+  flex-direction: column; /* puts number below range slider, needed for mobile displays! */
+  align-items: center;
+}
+
+#experience-value {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.svg-heading {
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0;
+  color: var(--text-color);
+}
+
+.svg-heading svg {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  height: auto;
+  max-height: 120px;
+  line-height: 1;
+}
+
+.svg-heading::after {
+  content: "";
+  display: block;
+  width: 500px; /* Default width */
+  height: 3px;
+  background-color: #F5A9B8; /* Pink color */
+  margin: 10px auto 0; /* Center it */
+}
+
+.block-span {
+  display: block;
+  background-color: var(--box-bg-color);
+  color: #fff;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+
+
 /* Media queries */
 
 @media (max-width: 768px) {
@@ -232,15 +342,13 @@ a[href*=".tv"] {
     width: 100%;
     margin: 0 auto;
   }
+
+  .svg-heading::after {
+    width: 350px; /* Reduce width on small screens */
+  }
 }
 
-.block-span {
-  display: block;
-  background-color: var(--box-bg-color);
-  color: #fff;
-  padding: 1rem;
-  margin: 1rem 0;
-}
+
 
 @media (max-width: 480px) {
   header h1 {
@@ -256,5 +364,17 @@ a[href*=".tv"] {
 
   .expansive-main {
     grid-column: span 1;
+  }
+
+  h2::after {
+    width: 200px;
+  }
+
+  .svg-heading svg {
+    height: 300px; /* Increase height */
+  }
+
+  .svg-heading::after {
+    width: 150px; /* Reduce width on small screens */
   }
 }

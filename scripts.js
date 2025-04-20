@@ -15,3 +15,11 @@ themeIcon.addEventListener('click', () => {
   themeIcon.src = isDark ? 'moon.png' : 'sun.png';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
+
+// only way I could find to update it live as you scroll.
+const experienceSlider = document.getElementById("experience");
+const experienceValue = document.getElementById("experience-value");
+
+experienceSlider.addEventListener("input", () => {
+  experienceValue.textContent = experienceSlider.value;
+});

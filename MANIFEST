@@ -8,7 +8,7 @@ CHOICES
 9a. View h1 in styles.css (48-55), text shadow on line 53 
 9b. Also in h1 ^, but on line 49
 12. 12b done for h1, text shadow on line 53. 12c done for LINK <a> shake (line 101 in styles.css)
-18. 
+18. 18a. index.html -> line 65 | 18b. Line 297 in styles.css, the pink line underneath the 'programming languages I know' svg
 
 19. N/A
 
@@ -19,7 +19,7 @@ Clicking on the sun will convert the text and background to a black and reddish 
 Clicking on the moon will then revert back the scene to its original colors upon loading the page.
 This is 'assumed light-mode'.
 
-
+I also added for the form input 'range', it live displays the number so you actually know what number 1-10 you're putting. The number is changed just to the right of the slider.
 
 NOTES TO STAFF
 (If there is anything you need to tell us, please use the section below)

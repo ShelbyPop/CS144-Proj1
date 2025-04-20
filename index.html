@@ -61,7 +61,24 @@
       </div>
 
       <section class="grid-section">
-        <h2>Software Languages I Know</h2>
+        <h2 class="svg-heading">
+          <svg viewBox="0 0 900 100" width="100%" height="70" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#5BCEFA;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#F5A9B8;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <!-- background gradient -->
+            <rect width="100%" height="100%" fill="url(#gradient1)" />
+            <!-- text on gradient -->
+            <text x="50%" y="60" text-anchor="middle" font-family="Bungee Spice, sans-serif" font-size="40" fill="white">
+              <tspan x="50%" dy="-.4em">Programming</tspan>
+              <tspan x="50%" dy="1.2em">Languages I Know</tspan>
+            </text>
+          </svg>
+        </h2>
+       
         <div class="grid-container">
           <div class="grid-item expansive-main">I know A LOT about C and C++!</div>
           <div class="grid-item">Visual Studio (Surprisingly!)</div>
@@ -72,12 +89,38 @@
       </section>
 
       <section class="flex-head">
-        <h2>Libraries I have used in the above languages</h2>
+        <h3>Libraries I have used in the above languages</h3>
         <div class="flex-container">
           <div class="flex-box">JavaScript: ThreeJS</div>
           <div class="flex-box">Python: NumPy</div>
           <div class="flex-box">JavaScript: Cannon.js</div>
         </div>
+      </section>
+
+      <section class="language-form">
+        <form>
+          <fieldset>
+            <legend>Programming Language Survey!</legend>
+      
+            <label for="lang-count">How many programming languages do you know?</label>
+            <input type="number" id="lang-count" name="lang-count" min="0" required>
+
+            <label for="startDate">When did you start programming?</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <label for="experience">Rate your personal programming experience (1–10):</label>
+            <!-- ugly, but needed because you dont really know what # you're rating without it.-->
+            <div class="range-wrapper">
+              <input type="range" id="experience" name="experience" min="1" max="10" value="5" required>
+              <span id="experience-value">5</span>
+            </div>
+
+            <button type="submit">Submit</button>
+      
+          </fieldset>
+      
+          
+        </form>
       </section>
 
       <span class="block-span">This contradictive inline block element brought to you by: Me</span>
