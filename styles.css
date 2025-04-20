@@ -28,11 +28,6 @@ body.dark {
   --container-bg-color: #572525;
   --box-bg-color: #333232;
   --form-color: #e6a1a1;
-  
-
-  /* --heading-color: #dabfff;
-  
-  --list-marker-color: #ff6f61; */
 }
 
 .container {
@@ -115,8 +110,6 @@ header h1 {
   color: var(--text-color);
   font-size: 1.1rem;
 }
-
-
 
 /* shake animation */
 @keyframes shake {

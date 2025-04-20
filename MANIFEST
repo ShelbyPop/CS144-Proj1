@@ -5,10 +5,10 @@ CHOICES
  which one you chose using the letter provided in the spec. Separate the letters with a comma
  In some cases you will also need to tell us what you did)
 -------
-9a. View h1 in styles.css (48-55), text shadow on line 53 
-9b. Also in h1 ^, but on line 49
-12. 12b done for h1, text shadow on line 53. 12c done for LINK <a> shake (line 101 in styles.css)
-18. 18a. index.html -> line 65 | 18b. Line 297 in styles.css, the pink line underneath the 'programming languages I know' svg
+9a. View h1 in styles.css (62-70), text shadow on line 66
+9b. Also in h1 ^, but on line 64
+12. 12b done for h1, text shadow on line 66. 12c done for LINK <a> shake (line 115 in styles.css)
+18. 18a. index.html -> line 65 | 18b. Line 291 in styles.css, the pink line underneath the 'programming languages I know' svg
 
 19. N/A
 
